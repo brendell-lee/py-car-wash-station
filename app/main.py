@@ -40,8 +40,8 @@ class CarWashStation:
         return round(total_income, 1)
 
     def rate_service(self, new_rating):
-        total_rating_points = (self.average_rating * self.count_of_ratings +
-                               new_rating)
+        total_rating_points = self.average_rating * self.count_of_ratings
+        total_rating_points += new_rating
         self.count_of_ratings += 1
         self.average_rating = round(total_rating_points /
                                     self.count_of_ratings, 1)
